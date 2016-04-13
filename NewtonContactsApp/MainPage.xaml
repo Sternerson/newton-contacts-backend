@@ -7,7 +7,59 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="#FFFFF1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <RelativePanel Width="Auto" Background="#5A7B6C">
+            <Button Name="btnHamburger" Background="#5A7B6C" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="24" Click="BtnHamburger_OnClick" />
+            <Button Name="btnBack" Background="#5A7B6C" RelativePanel.RightOf="btnHamburger" FontFamily="Segoe MDL2 Assets" Content="&#xE0C4;" FontSize="24" Click="BtnBack_OnClick"/>
+            <TextBox Name="txtboxSearch" Width="150" FontSize="18" RelativePanel.LeftOf="btnSearch" PlaceholderText="Search"></TextBox>
+            <Button Name="btnSearch" Background="#5A7B6C" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 Assets" Content="&#xE11A;" FontSize="24" Click="BtnSearch_OnClick" />
+        </RelativePanel>
+        <SplitView PaneBackground="#8FB87F"
+                   Name="splitviewMenu"
+                   Grid.Row="1"
+                   OpenPaneLength="170"
+                   CompactPaneLength="44"
+                   HorizontalAlignment="Left"
+                   DisplayMode="CompactInline"  
+                   >
+            <SplitView.Pane>
+                <ListBox SelectionChanged="ListBoxMenu_OnSelectionChanged"
+                         SelectionMode="Single"
+                         Name="listBoxMenu"
+                         Background="#8FB87F">
+                    <ListBoxItem Name="ListBoxItem1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE138;" FontSize="24"/>
+                            <TextBlock Margin="20,0,0,0" Text="Grid view" FontSize="18" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="ListBoxItem2">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE14C;" FontSize="24" />
+                            <TextBlock Margin="20,0,0,0" Text="List view" FontSize="18" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="ListBoxItem3">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE1E2;" FontSize="24" />
+                            <TextBlock Margin="20,0,0,0" Text="Add contact" FontSize="18" />
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame Name="frameMain">
+                </Frame>
+            </SplitView.Content>
+
+
+        </SplitView>
+
+
 
     </Grid>
 </Page>

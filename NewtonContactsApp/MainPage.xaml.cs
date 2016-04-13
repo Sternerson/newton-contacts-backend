@@ -26,5 +26,38 @@ namespace NewtonContactsApp
         {
             this.InitializeComponent();
         }
+        private void BtnHamburger_OnClick(object sender, RoutedEventArgs e)
+        {
+            splitviewMenu.IsPaneOpen = !splitviewMenu.IsPaneOpen;
+        }
+
+        private void BtnSearch_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnBack_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (frameMain.CanGoBack)
+            {
+                frameMain.GoBack();
+            }
+        }
+
+        private void ListBoxMenu_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListBoxItem1.IsSelected)
+            {
+                frameMain.Navigate(typeof(GridViewPage));
+            }
+            else if (ListBoxItem2.IsSelected)
+            {
+                frameMain.Navigate(typeof(ListViewPage));
+            }
+            else if (ListBoxItem3.IsSelected)
+            {
+                frameMain.Navigate(typeof(AddNewContactPage));
+            }
+        }
     }
 }
