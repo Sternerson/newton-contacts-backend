@@ -39,7 +39,7 @@ namespace NewtonContactsApp.Model
                     Name = "David Kihlstrand",
                     CareOf = "Björn kihlstrand",
                     City = "Göteborg",
-                    AppData = "Image?",
+                    AppData = "http://cdn.collider.com/wp-content/uploads/Venom-4.jpg",
                     Country = "Sweden",
                     EmailAddress = "spam@spammail.com",
                     Index = 0,
@@ -53,10 +53,10 @@ namespace NewtonContactsApp.Model
                     Name = "Annica Kihlstrand",
                     CareOf = "Derp kihlstrand",
                     City = "Stockholm",
-                    AppData = "Image?",
+                    AppData = "http://www.abc.net.au/news/image/7074102-3x2-940x627.jpg",
                     Country = "Norge",
                     EmailAddress = "spam@spammail.com",
-                    Index = 0,
+                    Index = 1,
                     PhoneNumber = "123123123",
                     PostalCode = "11111"
                 }); 

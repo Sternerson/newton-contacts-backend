@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using NewtonContactsApp.Model;
 
@@ -37,6 +38,22 @@ namespace NewtonContactsApp
         private void ListViewPage_OnLoaded(object sender, RoutedEventArgs e)
         {
             //Ladda in alla kontakter
+        }
+
+        private void ListViewMaster_OnItemClick(object sender, ItemClickEventArgs e)
+        {
+            var clickedContact = (Contact)e.ClickedItem;
+            imageDetail.Source = new BitmapImage(
+                new Uri(clickedContact.AppData, UriKind.Absolute));
+            txtblockDetailName.Text = clickedContact.Name;
+            txtblockDetailAddress.Text = clickedContact.Address;
+            txtblockDetailMail.Text = clickedContact.EmailAddress;
+            txtblockDetailPhone.Text = clickedContact.PhoneNumber;
+            txtblockDetailCareOf.Text = clickedContact.CareOf;
+            txtblockDetailCity.Text = clickedContact.City;
+            txtblockDetailCountry.Text = clickedContact.Country;
+            txtblockDetailPostalCode.Text = clickedContact.PostalCode;
+
         }
     }
 }

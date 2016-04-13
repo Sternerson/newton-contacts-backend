@@ -12,32 +12,66 @@
     <Grid Background="#FFFFF1"> 
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         
-        <ListView Name="listViewMaster" ItemsSource="{x:Bind Contacts}">
+        <ListView Name="listViewMaster" ItemsSource="{x:Bind Contacts}" IsItemClickEnabled="True" ItemClick="ListViewMaster_OnItemClick">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Contact">
-                    <StackPanel Orientation="Horizontal">
-                        <Image />
-                        <Rectangle Height="40" Width="50" Fill="Aqua" />
-                        <TextBlock Margin="16,12,0,0" Name="txtblockListName"  Text="{x:Bind Name}" />
-                        <TextBlock Margin="16,12,0,0"  Name="txtblockListPhone" Text="{x:Bind PhoneNumber}"/>
-                        <TextBlock Margin="16,12,0,0"  Name="txtblockListMail" Text="{x:Bind EmailAddress}" />
+                    <StackPanel Orientation="Horizontal" Margin="12,4,0,4">
+                        <Ellipse Width="45" Height="45">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{x:Bind AppData}" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock FontSize="20" Margin="16,0,0,0" Name="txtblockListName"  Text="{x:Bind Name}" />
+                        <TextBlock FontSize="20" Margin="16,0,0,0"  Name="txtblockListPhone" Text="{x:Bind PhoneNumber}"/>
+                        <TextBlock FontSize="20" Margin="16,0,0,0"  Name="txtblockListMail" Text="{x:Bind EmailAddress}" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
             
         </ListView>
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridDetail">
+        <Grid Name="gridDetail" Margin="20,0,0,0" Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
             
-            <TextBlock Text="derp" />
-
+                <Image Name="imageDetail" Grid.Row="0" Grid.Column="0" Height="400" Width="400" />
+            <RelativePanel Grid.Row="0" Grid.Column="1">
+                <TextBlock FontSize="20" Margin="16,12,0,0" Name="txtblockDetailName"
+                           RelativePanel.AlignTopWithPanel="True"/>
+                <TextBlock FontSize="20" Margin="16,12,0,0" Name="txtblockDetailAddress"
+                           RelativePanel.Below="txtblockDetailName"     
+                           />
+                <TextBlock Name="txtblockDetailPostalCode" FontSize="20" Margin="16,12,0,0" 
+                           RelativePanel.Below="txtblockDetailAddress"
+                           />
+                <TextBlock Name="txtblockDetailCity" FontSize="20" Margin="16,12,0,0" 
+                           RelativePanel.RightOf="txtblockDetailPostalCode"
+                           RelativePanel.AlignVerticalCenterWith="txtblockDetailPostalCode"/>
+                <TextBlock Name="txtblockDetailCareOf" FontSize="20" Margin="16,12,0,0" 
+                           RelativePanel.Below="txtblockDetailPostalCode"/>
+                <TextBlock Name="txtblockDetailCountry" FontSize="20" Margin="16,12,0,0" 
+                           RelativePanel.Below="txtblockDetailCareOf"/>
+                <TextBlock FontSize="20" Margin="16,12,0,0" Name="txtblockDetailPhone"
+                           RelativePanel.Below="txtblockDetailCountry"
+                           />
+                <TextBlock FontSize="20" Margin="16,12,0,0" Name="txtblockDetailMail"
+                           RelativePanel.Below="txtblockDetailPhone"
+                           />
+                
+            </RelativePanel>
+           
         </Grid>
         
         

@@ -21,10 +21,11 @@
         <SplitView PaneBackground="#8FB87F"
                    Name="splitviewMenu"
                    Grid.Row="1"
+                   IsPaneOpen="True"
                    OpenPaneLength="170"
                    CompactPaneLength="44"
                    HorizontalAlignment="Left"
-                   DisplayMode="CompactInline"  
+                   DisplayMode="Inline"        
                    >
             <SplitView.Pane>
                 <ListBox SelectionChanged="ListBoxMenu_OnSelectionChanged"
