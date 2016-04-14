@@ -30,7 +30,37 @@ namespace NewtonContactsApp.Model
 
         public IList<Contact> GetAll()
         {
-            throw new NotImplementedException();
+            IList<Contact> contacts = new List<Contact>();
+
+            contacts.Add(
+                new Contact
+                {
+                    Address = "vägen 1",
+                    Name = "David Kihlstrand",
+                    CareOf = "Björn kihlstrand",
+                    City = "Göteborg",
+                    AppData = "http://cdn.collider.com/wp-content/uploads/Venom-4.jpg",
+                    Country = "Sweden",
+                    EmailAddress = "spam@spammail.com",
+                    Index = 0,
+                    PhoneNumber = "070000000",
+                    PostalCode = "45521"
+                });
+            contacts.Add(
+                new Contact
+                {
+                    Address = "vägen 2",
+                    Name = "Annica Kihlstrand",
+                    CareOf = "Derp kihlstrand",
+                    City = "Stockholm",
+                    AppData = "http://www.abc.net.au/news/image/7074102-3x2-940x627.jpg",
+                    Country = "Norge",
+                    EmailAddress = "spam@spammail.com",
+                    Index = 1,
+                    PhoneNumber = "123123123",
+                    PostalCode = "11111"
+                }); 
+            return contacts;
         }
 
         public void SaveChanges()
